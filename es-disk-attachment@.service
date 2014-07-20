@@ -1,0 +1,14 @@
+[Unit]
+Description=Attach/Dettach Disks For ES Nodes
+Requires=es-disk-mount@%i.mount
+Before=es-disk-mount@%i.mount
+
+[Service]
+EnvironmentFile=/etc/environment
+
+ExecStart=...
+
+ExecStop=...
+
+[X-Fleet]
+X-ConditionMachineOf=es@%i.service

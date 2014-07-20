@@ -1,0 +1,20 @@
+[Unit]
+Description=Elastic Search
+Requires=es-disk-attachment@%i.service,es-disk-mount@%i.mount
+After=es-disk-mount@%i.mount
+
+[Service]
+EnvironmentFile=/etc/environment
+
+ExecStartPre=...
+
+ExecStart=...
+
+ExecStartPost=...
+
+ExecStop=...
+
+ExecStopPost=....
+
+[X-Fleet]
+X-Conflicts=es*.service

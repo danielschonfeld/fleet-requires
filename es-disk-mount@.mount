@@ -1,0 +1,10 @@
+[Unit]
+Description=Mount a disk for ElasticSearch
+
+[Mount]
+What=/dev/disk/by-id/google-es-node-%i-ssd-disk
+Where=/es-node-%i
+Type=btrfs
+
+[X-Fleet]
+X-ConditionMachineOf=es@%i.service
